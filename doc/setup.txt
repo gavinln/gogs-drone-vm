@@ -34,3 +34,8 @@ dorne repo ls
 
 # build a repo
 drone build start gavinln/pyswagger-test 1  # build number
+
+Setup Drone and Gogs as shown here
+https://discuss.drone.io/t/running-gogs-and-drone-with-docker-compose/173
+https://github.com/james-bowman/blog/blob/master/content/post/run-your-own-private-cd-pipeline-with-gogs-drone-and-docker.md
+http://www.jamesbowman.me/post/socratic-questions/
