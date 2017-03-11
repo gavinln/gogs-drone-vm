@@ -5,5 +5,32 @@ Follow this example
 http://readme.drone.io/admin/setup-github/
 
 Application name: Drone-test
-Homepage URL: http://localhost
-Authorization callback URL: http://localhost/authorize
+Homepage URL: http://192.168.33.10
+Authorization callback URL: http://192.168.33.10/authorize
+
+cd /vagrant/server
+
+source setup_env.sh
+
+docker-compose up
+
+See instructions here on creating .drone.yml
+https://www.digitalocean.com/community/tutorials/how-to-perform-continuous-integration-testing-with-drone-io-on-coreos-and-docker
+
+Setup drone cli
+cd ~
+curl http://downloads.drone.io/release/linux/amd64/drone.tar.gz | tar zx
+sudo install -t /usr/local/bin drone
+
+# authorize CLI
+export DRONE_SERVER=http://localhost/
+export DRONE_TOKEN=...
+
+# check CLI setup
+drone info
+
+# list all repos
+dorne repo ls
+
+# build a repo
+drone build start gavinln/pyswagger-test 1  # build number
