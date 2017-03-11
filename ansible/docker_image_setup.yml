@@ -1,0 +1,4 @@
+---
+- name: pull drone image
+  docker_image:
+      name: drone/drone:0.5.0

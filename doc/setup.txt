@@ -1,0 +1,9 @@
+Register Drone as a github application at
+https://github.com/settings/applications/new
+
+Follow this example
+http://readme.drone.io/admin/setup-github/
+
+Application name: Drone-test
+Homepage URL: http://localhost
+Authorization callback URL: http://localhost/authorize
