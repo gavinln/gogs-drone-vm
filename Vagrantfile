@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/xenial64"
 
+  config.ssh.forward_agent = true
+
   # do not update configured box
   # config.vm.box_check_update = false
 
