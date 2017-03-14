@@ -7,7 +7,7 @@ def add(x, y):
 
 
 def main():
-    print( "in calculator")
+    print("in calculator")
 
 
 if __name__ == '__main__':
