@@ -6,4 +6,4 @@ pipeline:
       - ls
       - python calculator.py
       - pip install -r requirements.txt
-      - flake8
+      - flake8 .
