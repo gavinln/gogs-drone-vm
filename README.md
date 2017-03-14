@@ -5,7 +5,7 @@
 
 [10]: https://github.com/gavinln/gogs-drone-vm
 
-## About
+# About
 
 This project provides a [Ubuntu (14.04)][20] [Vagrant][30] Virtual Machine (VM) with [Docker][40] installed using [Ansible][50].
 
