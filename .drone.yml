@@ -5,3 +5,5 @@ pipeline:
       - pwd
       - ls
       - python calculator.py
+      - pip install -r requirements.txt
+      - flake8
