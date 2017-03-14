@@ -2,8 +2,6 @@ pipeline:
   build:
     image: python:3.5.1-alpine
     commands:
-      - pwd
-      - ls
-      - python calculator.py
+      - pip install --upgrade pip
       - pip install -r requirements.txt
       - flake8 .
