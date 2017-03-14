@@ -8,6 +8,7 @@ services:
       - "10080:3000"
     volumes:
       - /var/gogs:/data
+    restart: always
 
   drone-server:
     image: drone/drone:0.5
