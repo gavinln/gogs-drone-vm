@@ -59,14 +59,14 @@ Vagrant.configure("2") do |config|
   #   vb.memory = "1024"
   # end
 
-  config.vm.define "drone-vm", autostart: true do |machine|
+  config.vm.define "gogs-drone-vm", autostart: true do |machine|
     machine.vm.provider "virtualbox" do |vb|
       # vb.gui = true
       vb.memory = "2048"
       vb.cpus = "1"
     end
 
-    machine.vm.hostname = "drone-vm"
+    machine.vm.hostname = "gogs-drone-vm"
     machine.vm.network "private_network", ip: "192.168.33.10"
 
     machine.vm.provision "shell" do |sh|
