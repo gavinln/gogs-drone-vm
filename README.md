@@ -1,9 +1,9 @@
-# drone-vm
+# gogs-drone-vm
 
 * Source code - [Github][10]
 * Author - Gavin Noronha - <gavinln@hotmail.com>
 
-[10]: https://github.com/gavinln/drone-vm
+[10]: https://github.com/gavinln/gogs-drone-vm
 
 ## About
 
@@ -19,7 +19,7 @@ This project provides a [Ubuntu (14.04)][20] [Vagrant][30] Virtual Machine (VM) 
 1. Change to the root of the project
 
     ```
-    cd drone-vm
+    cd gogs-drone-vm
     ```
 
 2. To start the virtual machine(VM) type
