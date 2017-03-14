@@ -2,6 +2,6 @@ pipeline:
   build:
     image: python:3.5.1-alpine
     commands:
-      - echo hello world
       - pwd
       - ls
+      - python calculator.py
