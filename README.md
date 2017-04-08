@@ -7,12 +7,19 @@
 
 # About
 
-This project provides a [Ubuntu (16.04)][20] [Vagrant][30] Virtual Machine (VM) with [Docker][40] installed using [Ansible][50].
+This project provides a [Ubuntu (16.04)][20] [Vagrant][30] Virtual Machine
+(VM) with [Docker][40] installed using [Ansible][50].
 
 [20]: http://releases.ubuntu.com/14.04/
 [30]: http://www.vagrantup.com/
 [40]: https://www.docker.com/
 [50]: https://www.ansible.com/
+
+It is used to setup [Gogs][60] a self-hosted Git service. It also includes
+the [Drone][70] continuous integration service.
+
+[60]: https://gogs.io/
+[70]: http://try.drone.io/
 
 ## Running the VM
 
