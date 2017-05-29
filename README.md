@@ -29,13 +29,20 @@ the [Drone][70] continuous integration service.
     cd gogs-drone-vm
     ```
 
-2. To start the virtual machine(VM) type
+2. Check drone and gogs version in the following files
+
+    ```
+    ansible/vars/main.yml
+    server/docker-compose.yml
+    ```
+
+3. To start the virtual machine(VM) type
 
     ```
     vagrant up
     ```
 
-3. Connect to the VM
+4. Connect to the VM
 
     ```
     vagrant ssh

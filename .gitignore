@@ -7,3 +7,4 @@
 ansible/playbook.retry
 do_not_checkin/
 server/drone/
+ansible/roles

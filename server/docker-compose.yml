@@ -2,7 +2,7 @@ version: '2'
 
 services:
   gogs:
-    image: gogs/gogs:0.10.8
+    image: gogs/gogs:0.11.4
     ports:
       - "10022:22"
       - "10080:3000"
@@ -11,7 +11,7 @@ services:
     restart: always
 
   drone-server:
-    image: drone/drone:0.5
+    image: drone/drone:0.7.1
     ports:
       - 80:8000
     volumes:
@@ -22,12 +22,12 @@ services:
       - DRONE_GOGS=true
       - DRONE_GOGS_URL=http://gogs:3000
       - DRONE_SECRET=${DRONE_SECRET}
-#       - DRONE_GITHUB=true
-#       - DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
-#       - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
+        #       - DRONE_GITHUB=true
+        #       - DRONE_GITHUB_CLIENT=${DRONE_GITHUB_CLIENT}
+        #       - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
 
   drone-agent:
-    image: drone/drone:0.5
+    image: drone/drone:0.7.1
     command: agent
     restart: always
     depends_on: [ drone-server ]

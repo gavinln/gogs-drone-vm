@@ -1,20 +1,58 @@
-Register Drone as a github application at
-https://github.com/settings/applications/new
+Run Drone and Gogs
+1. Login to the VM
+vagrant ssh
 
-Follow this example
-http://readme.drone.io/admin/setup-github/
-
-Application name: Drone-test
-Homepage URL: http://192.168.33.10
-Authorization callback URL: http://192.168.33.10/authorize
-
+2. Change to the server directory
 cd /vagrant/server
 
+3. Setup environment variables
 source setup_env.sh
 
+4. Build Gogs, Drone server, Drone agent docker containers
 docker-compose up
 
+Setup Gogs
+1. Go to the Gogs page
+open a browser to http://192.168.33.10:10080/
+
+2. Set the following options and click register
+Change the Database Type to SQLite3
+Change the Domain to 192.168.33.10
+Change the SSH Port to 10022
+Do not select "Use Builtin SSH Server"
+Change the Application URL to http://192.168.33.10:10080/
+
+3. Click Register to sign up for an account
+
+4. Create a new repository
+
+5. Give it a name gogs-drone-vm
+
+6. Click "Create Respository"
+
+7. Open your browser to your settings pages
+http://192.168.33.10:10080/user/settings
+
+8. Click "SSH Keys" and "Add Key"
+
+9. Copy your public key (use any Key name)
+%USERPROFILE%\.ssh\id_rsa.pub on Windows
+
+10. Click add key
+
+11. Add the gogs repository as a remote repository
+git remote add gogs ssh://git@192.168.33.10:10022/gavinln/gogs-drone-vm.git
+
+12. Push your code to the gogs repo
+git push gogs master
+
+Login to Drone
+1. Connect to Drone UI
 Open your browser to http://192.168.33.10
+
+2. Login using your Gogs username and password
+
+
 
 See instructions here on creating .drone.yml
 https://www.digitalocean.com/community/tutorials/how-to-perform-continuous-integration-testing-with-drone-io-on-coreos-and-docker
@@ -57,14 +95,6 @@ docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs:0.
 # Use `docker start` if you have stopped it.
 docker start gogs
 
-open a browser to http://192.168.33.10:10080/
-
-Change the Database Type to SQLite3
-Change the Domain to 192.168.33.10
-Change the SSH Port to 10022
-Do not select Builtin SSH Server
-Change the Application URL to http://192.168.33.10:10080/
-
 Sign up for an account
 
 Connect to VM using ssh-vm.bat and agent forwarding is enabled
@@ -74,3 +104,15 @@ git clone ssh://git@192.168.33.10:10022/gavinln/drone-vm.git
 
 Setup a remote called gogs for an existing project
 git remote add gogs ssh://git@192.168.33.10:10022/gavinln/scikit-vm.git
+
+Setup Drone autentication with Github
+1. Register Drone as a github application at
+https://github.com/settings/applications/new
+
+2. Follow this example
+http://readme.drone.io/admin/setup-github/
+
+3. Set up the following
+Application name: Drone-test
+Homepage URL: http://192.168.33.10
+Authorization callback URL: http://192.168.33.10/authorize

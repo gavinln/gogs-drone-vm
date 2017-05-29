@@ -16,16 +16,13 @@ Vagrant.configure("2") do |config|
 
   config.ssh.forward_agent = true
 
-  # do not update configured box
-  # config.vm.box_check_update = false
-
   # user insecure key
   # config.ssh.insert_key = false
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
-  # config.vm.box_check_update = false
+  config.vm.box_check_update = true
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -64,14 +61,33 @@ Vagrant.configure("2") do |config|
       # vb.gui = true
       vb.memory = "2048"
       vb.cpus = "1"
+
+      if Vagrant::Util::Platform.windows? then
+        # Fix for slow external network connections for Windows 10
+        vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+        vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+      end
     end
 
     machine.vm.hostname = "gogs-drone-vm"
     machine.vm.network "private_network", ip: "192.168.33.10"
 
-    machine.vm.provision "shell" do |sh|
-      sh.path = "ansible/ansible_install.sh"
-      sh.args = "ansible/playbook.yml"
+    # machine.vm.provision "shell", privileged: false, inline: <<-SHELL
+    #     echo "export USERNAME=#{ENV['USERNAME']}" > /home/vagrant/bootstrap.sh
+    #     echo "export COMPUTERNAME=#{ENV['COMPUTERNAME']}" >> /home/vagrant/bootstrap.sh
+    # SHELL
+
+    # machine.vm.provision "shell" do |sh|
+    #   sh.path = "ansible/ansible_install.sh"
+    #   sh.args = "ansible/playbook.yml"
+    # end
+
+    machine.vm.provision "ansible_local" do |ansible|
+      ansible.install_mode = "pip"
+      ansible.version = "2.2.3.0"
+      ansible.provisioning_path = "/vagrant/ansible"
+      ansible.galaxy_role_file = "requirements.yml"
+      ansible.playbook = "playbook.yml"
     end
   end
 

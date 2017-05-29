@@ -1,8 +1,8 @@
 ---
 - name: pull drone image
   docker_image:
-      name: drone/drone:0.5.0
+      name: "{{ drone_container }}"
 
 - name: pull gogs image
   docker_image:
-      name: gogs/gogs:0.10.8
+      name: "{{ gogs_container }}"
