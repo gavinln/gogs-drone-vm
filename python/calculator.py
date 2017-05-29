@@ -6,6 +6,10 @@ def add(x, y):
     return x + y
 
 
+def del(x, y):
+    return x - y
+
+
 def main():
     print("in calculator")
 

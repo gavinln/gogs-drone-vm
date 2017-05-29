@@ -32,7 +32,7 @@ export DRONE_TOKEN=...
 drone info
 
 # list all repos
-dorne repo ls
+drone repo ls
 
 # build a repo
 drone build start gavinln/pyswagger-test 1  # build number
