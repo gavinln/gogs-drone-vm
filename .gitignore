@@ -4,6 +4,7 @@
 *.swp
 .vagrant
 *.log
+__pycache__
 ansible/playbook.retry
 do_not_checkin/
 server/drone/
