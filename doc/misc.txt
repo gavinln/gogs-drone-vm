@@ -1,0 +1,51 @@
+Other instructions - may not be needed
+See instructions here on creating .drone.yml
+https://www.digitalocean.com/community/tutorials/how-to-perform-continuous-integration-testing-with-drone-io-on-coreos-and-docker
+
+Setup drone cli
+cd ~
+curl http://downloads.drone.io/release/linux/amd64/drone.tar.gz | tar zx
+sudo install -t /usr/local/bin drone
+
+# authorize CLI
+export DRONE_SERVER=http://localhost/
+export DRONE_TOKEN=...
+
+# check CLI setup
+drone info
+
+# list all repos
+drone repo ls
+
+# build a repo
+drone build start gavinln/pyswagger-test 1  # build number
+
+Setup Drone and Gogs as shown here
+https://discuss.drone.io/t/running-gogs-and-drone-with-docker-compose/173
+https://github.com/james-bowman/blog/blob/master/content/post/run-your-own-private-cd-pipeline-with-gogs-drone-and-docker.md
+http://www.jamesbowman.me/post/socratic-questions/
+
+Setup Gogs
+https://github.com/gogits/gogs/tree/master/docker
+
+# Create local directory for volume.
+sudo mkdir -p /var/gogs
+
+Start tmux
+tmux
+
+Sign up for an account
+
+Connect to VM using ssh-vm.bat and agent forwarding is enabled
+
+Setup Drone autentication with Github
+1. Register Drone as a github application at
+https://github.com/settings/applications/new
+
+2. Follow this example
+http://readme.drone.io/admin/setup-github/
+
+3. Set up the following
+Application name: Drone-test
+Homepage URL: http://192.168.33.10
+Authorization callback URL: http://192.168.33.10/authorize
