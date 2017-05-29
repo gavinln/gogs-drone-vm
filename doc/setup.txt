@@ -52,8 +52,7 @@ Open your browser to http://192.168.33.10
 
 2. Login using your Gogs username and password
 
-
-
+Other instructions - may not be needed
 See instructions here on creating .drone.yml
 https://www.digitalocean.com/community/tutorials/how-to-perform-continuous-integration-testing-with-drone-io-on-coreos-and-docker
 
@@ -89,21 +88,9 @@ sudo mkdir -p /var/gogs
 Start tmux
 tmux
 
-# Use `docker run` for the first time.
-docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs:0.10.8
-
-# Use `docker start` if you have stopped it.
-docker start gogs
-
 Sign up for an account
 
 Connect to VM using ssh-vm.bat and agent forwarding is enabled
-
-Clone from Gogs
-git clone ssh://git@192.168.33.10:10022/gavinln/drone-vm.git
-
-Setup a remote called gogs for an existing project
-git remote add gogs ssh://git@192.168.33.10:10022/gavinln/scikit-vm.git
 
 Setup Drone autentication with Github
 1. Register Drone as a github application at
