@@ -6,7 +6,7 @@ def add(x, y):
     return x + y
 
 
-def del(x, y):
+def sub(x, y):
     return x - y
 
 
