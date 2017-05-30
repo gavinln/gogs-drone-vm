@@ -1,0 +1,8 @@
+Remove ansible/ansible_install.sh
+
+Rename to use hyphen
+cli_setup.yml
+docker_image_setup.yml
+docker_setup.yml
+init_setup.yml
+python_setup.yml
