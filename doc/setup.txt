@@ -8,6 +8,8 @@ cd /vagrant/server
 3. Setup environment variables
 export DRONE_SECRET=this_is_my_secret
 
+3. Data stored in /vagrant/server/drone and /var/gogs
+
 4. Build Gogs, Drone server, Drone agent docker containers
 docker-compose up
 
@@ -47,8 +49,8 @@ http://192.168.33.10:10080/user/settings
 
 2. Click "SSH Keys" and "Add Key"
 
-3. Copy your public key (use any Key name)
-%USERPROFILE%\.ssh\id_rsa.pub on Windows
+3. Copy your public key (use any Key name) on Windows
+%USERPROFILE%\.ssh\id_rsa.pub
 
 4. Click add key
 

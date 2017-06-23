@@ -20,7 +20,7 @@ services:
     environment:
       - DRONE_OPEN=true
       - DRONE_GOGS=true
-      - DRONE_GOGS_URL=http://gogs:3000
+      - DRONE_GOGS_URL=http://192.168.33.10:10080
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
@@ -31,5 +31,5 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=ws://192.168.33.10/ws/broker
       - DRONE_SECRET=${DRONE_SECRET}
