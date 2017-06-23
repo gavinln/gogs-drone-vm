@@ -6,7 +6,7 @@ vagrant ssh
 cd /vagrant/server
 
 3. Setup environment variables
-source setup_env.sh
+export DRONE_SECRET=this_is_my_secret
 
 4. Build Gogs, Drone server, Drone agent docker containers
 docker-compose up
