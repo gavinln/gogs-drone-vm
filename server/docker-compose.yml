@@ -5,7 +5,7 @@ services:
     image: gogs/gogs:0.11.19
     ports:
       - "10022:22"
-      - "10080:3000"
+      - "3000:3000"
     volumes:
       - /var/gogs:/data
     restart: always
@@ -13,14 +13,14 @@ services:
   drone-server:
     image: drone/drone:0.7.2
     ports:
-      - 80:8000
+      - 8000:8000
     volumes:
       - ./drone:/var/lib/drone/
     restart: always
     environment:
       - DRONE_OPEN=true
       - DRONE_GOGS=true
-      - DRONE_GOGS_URL=http://192.168.33.10:10080
+      - DRONE_GOGS_URL=http://192.168.33.10:3000
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
@@ -31,5 +31,5 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://192.168.33.10/ws/broker
+      - DRONE_SERVER=ws://192.168.33.10:8000/ws/broker
       - DRONE_SECRET=${DRONE_SECRET}
