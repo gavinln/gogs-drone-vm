@@ -8,6 +8,10 @@ def test_hypotenuse1():
 
 
 def test_hypotenuse2():
+    assert hypotenuse(6, 8) == 10
+
+
+def test_hypotenuse3():
     x = 23
     y = 15
     h = hypotenuse(x, y)
@@ -15,14 +19,14 @@ def test_hypotenuse2():
     assert h < x + y
 
 
-def test_hypotenuse3():
+def test_hypotenuse4():
     x = 23
     y = 15
     h = hypotenuse(x, y)
     assert h < x + y
 
 
-def test_hypotenuse4():
+def test_hypotenuse5():
     x = 23
     h = hypotenuse(x, x)
     assert abs(h - x * math.sqrt(2)) < 0.001
