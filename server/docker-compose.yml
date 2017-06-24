@@ -23,7 +23,6 @@ services:
       - DRONE_HOST=http://drone-server:8000
       - DRONE_GOGS_URL=http://gogs:3000
       - DRONE_SECRET=${DRONE_SECRET}
-      - DRONE_ADMIN=gavinln
 
   drone-agent:
     image: drone/drone:0.7.1
