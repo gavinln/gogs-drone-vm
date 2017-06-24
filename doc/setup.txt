@@ -77,3 +77,7 @@ Setup repository on Drone
 3. Turn on switch on the gogs-drone-vm
 
 4. Automatically run build when you push to repository
+
+Drone CLI
+export DRONE_SERVER=http://192.168.33.10
+export DRONE_TOKEN=...
