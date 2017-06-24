@@ -22,7 +22,7 @@ Change the Database Type to SQLite3
 Change the Domain to 192.168.33.10
 Change the SSH Port to 10022
 Do not select "Use Builtin SSH Server"
-Change HTTP Port to 10080
+Keep the HTTP port at 3000
 Change the Application URL to http://192.168.33.10:10080/
 
 3. Click "Install Gogs"
