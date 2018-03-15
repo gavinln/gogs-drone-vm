@@ -14,25 +14,25 @@ services:
     image: drone/drone:0.8.4
     ports:
       - 80:8000
+      - 9000:9000
     volumes:
       - ./drone:/var/lib/drone/
     restart: always
     environment:
       - DRONE_OPEN=true
       - DRONE_GOGS=true
-      - DRONE_GOGS_PRIVATE_MODE=true
 # DRONE_HOST may not be needed
       - DRONE_HOST=http://drone-server:8000
       - DRONE_GOGS_URL=http://gogs:3000
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:0.7.1
+    image: drone/agent:0.8.4
     command: agent
     restart: always
     depends_on: [ drone-server ]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}

@@ -60,14 +60,18 @@ Push your git project to the Gogs repository
 2. Add the gogs repository as a remote repository
 git remote add gogs ssh://git@192.168.33.10:10022/gavinln/gogs-drone-vm.git
 
-3. Push your code to the gogs repo
+3. Remove old key if necessary
+ssh-keygen -R [192.168.33.10]:10022
+
+4. Push your code to the gogs repo
 git push gogs master
 
 Login to Drone
 1. Connect to Drone UI
 Open your browser to http://192.168.33.10
 
-2. Login using your Gogs username and password as Drone is setup to use Gogs
+2. Login using your Gogs username (not email addres) and password as Drone is
+   setup to use Gogs
 
 Setup repository on Drone
 1. Click menu on top right
