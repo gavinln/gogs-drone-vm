@@ -20,6 +20,7 @@ services:
     environment:
       - DRONE_OPEN=true
       - DRONE_GOGS=true
+      - DRONE_GOGS_PRIVATE_MODE=true
 # DRONE_HOST may not be needed
       - DRONE_HOST=http://drone-server:8000
       - DRONE_GOGS_URL=http://gogs:3000
