@@ -13,59 +13,6 @@ export DRONE_SECRET=this_is_my_secret
 4. Build Gogs, Drone server, Drone agent docker containers
 docker-compose up
 
-Setup Gogs
-1. Go to the Gogs page
-open a browser to http://192.168.33.10:3000/
-
-2. Set the following options and click register
-Change the Database Type to SQLite3
-Change the Domain to 192.168.33.10
-Change the SSH Port to 10022
-Do not select "Use Builtin SSH Server"
-Keep the HTTP port at 3000
-Change the Application URL to http://192.168.33.10:3000/
-
-3. Click "Install Gogs"
-
-Register for an account
-1. Click Register to sign up for an account
-
-2. Enter details and click "Create New Account"
-
-Create a new repository
-1. Open your browser to http://192.168.33.10:3000/
-
-2. Click "Sign In", enter username and password and login
-
-3. Click plus on "My repositories" to create a new repository
-
-4. Enter repository name as gogs-drone-vm
-
-5. Click "Create Respository"
-
-Setup private key for authentication
-1. Open your browser to your settings pages
-http://192.168.33.10:3000/user/settings
-
-2. Click "SSH Keys" and "Add Key"
-
-3. Copy your public key (use any Key name) on Windows
-%USERPROFILE%\.ssh\id_rsa.pub
-
-4. Click add key
-
-Push your git project to the Gogs repository
-1. Go to your Git repository gogs-drone-vm
-
-2. Add the gogs repository as a remote repository
-git remote add gogs http://192.168.33.10:3000/gavin/gogs-drone-vm.git
-
-3. Remove old key if necessary (not necessary if using http)
-ssh-keygen -R [192.168.33.10]:10022
-
-4. Push your code to the gogs repo
-git push gogs master
-
 Login to Drone
 1. Connect to Drone UI
 Open your browser to http://192.168.33.10
