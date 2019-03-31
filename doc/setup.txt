@@ -33,7 +33,7 @@ Register for an account
 2. Enter details and click "Create New Account"
 
 Create a new repository
-1. Open your browser to http://192.168.33.10:10080/
+1. Open your browser to http://192.168.33.10:3000/
 
 2. Click "Sign In", enter username and password and login
 
@@ -45,7 +45,7 @@ Create a new repository
 
 Setup private key for authentication
 1. Open your browser to your settings pages
-http://192.168.33.10:10080/user/settings
+http://192.168.33.10:3000/user/settings
 
 2. Click "SSH Keys" and "Add Key"
 
@@ -58,9 +58,9 @@ Push your git project to the Gogs repository
 1. Go to your Git repository gogs-drone-vm
 
 2. Add the gogs repository as a remote repository
-git remote add gogs ssh://git@192.168.33.10:10022/gavinln/gogs-drone-vm.git
+git remote add gogs http://192.168.33.10:3000/gavin/gogs-drone-vm.git
 
-3. Remove old key if necessary
+3. Remove old key if necessary (not necessary if using http)
 ssh-keygen -R [192.168.33.10]:10022
 
 4. Push your code to the gogs repo
