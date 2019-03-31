@@ -13,7 +13,7 @@
 
   roles:
     - geerlingguy.ntp
-    - angstwad.docker_ubuntu
+    - geerlingguy.docker
 
   tasks:
     - include: init_setup.yml

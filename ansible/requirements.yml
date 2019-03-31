@@ -1,4 +1,5 @@
 ---
  - src: geerlingguy.ntp
+   version: 1.5.3
 
- - src: angstwad.docker_ubuntu
+ - src: geerlingguy.docker

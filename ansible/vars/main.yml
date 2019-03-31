@@ -2,6 +2,6 @@
 workspace: /root
 ntp_timezone: America/Los_Angeles
 
-drone_container: drone/drone:0.7.1
+drone_container: drone/drone:1.0.0
 
 gogs_container: gogs/gogs:0.11.4

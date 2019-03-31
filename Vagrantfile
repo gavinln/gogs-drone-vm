@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "ubuntu/bionic64"
 
   config.ssh.forward_agent = true
 
@@ -77,17 +77,22 @@ Vagrant.configure("2") do |config|
     #     echo "export COMPUTERNAME=#{ENV['COMPUTERNAME']}" >> /home/vagrant/bootstrap.sh
     # SHELL
 
-    # machine.vm.provision "shell" do |sh|
-    #   sh.path = "ansible/ansible_install.sh"
-    #   sh.args = "ansible/playbook.yml"
-    # end
+    machine.vm.provision "shell" do |sh|
+      sh.path = "ansible/ansible_install.sh"
+    end
 
     machine.vm.provision "ansible_local" do |ansible|
+      ansible.install = :false
+      ansible.compatibility_mode = "2.0"
       ansible.install_mode = "pip"
-      ansible.version = "2.2.3.0"
+      ansible.version = "2.7.4"
       ansible.provisioning_path = "/vagrant/ansible"
       ansible.galaxy_role_file = "requirements.yml"
+      ansible.galaxy_roles_path = "/vagrant/ansible/roles"
       ansible.playbook = "playbook.yml"
+      ansible.extra_vars = {
+        ansible_python_interpreter: "/usr/bin/python3"
+      }
     end
   end
 

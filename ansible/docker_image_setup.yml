@@ -3,6 +3,6 @@
   docker_image:
       name: "{{ drone_container }}"
 
-- name: pull gogs image
-  docker_image:
-      name: "{{ gogs_container }}"
+# - name: pull gogs image
+#   docker_image:
+#       name: "{{ gogs_container }}"

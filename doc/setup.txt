@@ -15,7 +15,7 @@ docker-compose up
 
 Setup Gogs
 1. Go to the Gogs page
-open a browser to http://192.168.33.10:10080/
+open a browser to http://192.168.33.10:3000/
 
 2. Set the following options and click register
 Change the Database Type to SQLite3
@@ -23,7 +23,7 @@ Change the Domain to 192.168.33.10
 Change the SSH Port to 10022
 Do not select "Use Builtin SSH Server"
 Keep the HTTP port at 3000
-Change the Application URL to http://192.168.33.10:10080/
+Change the Application URL to http://192.168.33.10:3000/
 
 3. Click "Install Gogs"
 
