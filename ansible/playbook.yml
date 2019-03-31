@@ -12,8 +12,9 @@
       become: yes
 
   roles:
-    - geerlingguy.ntp
-    - geerlingguy.docker
+    - role: geerlingguy.ntp
+    - role: geerlingguy.docker
+      apt_key_url: "hkp://p80.pool.sks-keyservers.net:80"
 
   tasks:
     - include: init_setup.yml
