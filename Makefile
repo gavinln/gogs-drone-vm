@@ -27,4 +27,4 @@ flake8:
 	@flake8 python
 
 clean:
-	git clean -n -d -x
+	git clean -n -x
